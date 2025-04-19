@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="mni">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wareng (prose) and Seireng (poetry) from Manipuri textbooks">
+    <meta name="keywords" content="Manipuri literature, Meetei Mayek, Wareng, Seireng, Manipur">
+    <title>ꯋꯥꯔꯦꯡ ꯑꯃꯁꯨꯡ ꯁꯩꯔꯦꯡꯅꯆꯤꯡꯕꯁꯤꯡ  | Manipuri Prose, Poetry and literature Collection</title>
+    <style>
+        :root {
+            --primary-color: #1d4075;
+            --primary-dark: #d5aa0ee4;
+            --primary-light: #297f8c;
+            --secondary-color: #a064e0;
+            --text-dark: #333333;
+            --text-medium: #555555;
+            --text-light: #777777;
+            --text-on-dark: #FFFFFF;
+            --text-on-light: #333333;
+            --shadow: 0 4px 6px rgba(178, 151, 202, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        .meitei-mayek {
+            font-family: Arial, sans-serif;
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background:transparent;
+            color: var(--text-on-dark);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary-dark);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--text-on-dark);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            color: var(--text-on-dark);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            background-color: transparent;
+            color: var(--text-on-dark);
+            border: 2px solid var(--text-on-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            position: relative;
+            margin-left: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        main {
+            padding: 3rem 0;
+            min-height: calc(100vh - 300px);
+        }
+        
+        section {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            color: var(--text-dark);
+        }
+        
+        section:target {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        #home:target, 
+        body:not(:target) #home {
+            display: block;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .literature-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+        
+        .literature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .literature-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+        
+        .literature-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        #home {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .welcome-message {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            color: var(--text-dark);
+        }
+        
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: rgba(51, 51, 51, 0.9);
+            color: var(--text-on-dark);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+            color: blue(--text-on-dark);
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgb(96, 144, 183);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+                z-index: 99;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-item {
+                margin: 0;
+                padding: 0.5rem 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .literature-card {
+                padding: 1.5rem;
+            }
+            
+            header {
+                padding: 2rem 0;
+            }
+            
+            .feature-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body background="https://imgs.search.brave.com/wisevqEDKhDqLk45_BXJRXrpOC69xQFsJCQWjdykq1Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWRy/YXNjb3VyaWVyLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wOC9TYW5nYWlf/RGVlcl9NYWRyYXNf/Q291cmllci5qcGVn" bgproperties="fixed" style="margin:0; color:white; font-family:Arial;">
+    <header>
+        <div class="container header-content">
+            <h1 style="color: white;"class="meitei-mayek">ꯋꯥꯔꯦꯡ ꯑꯃꯁꯨꯡ ꯁꯩꯔꯦꯡꯅꯆꯤꯡꯕꯁꯤꯡ</h1>
+            <p class="subtitle">Preserving and Promoting Manipuri Literature</p>
+            <a href="#wareng" class="btn">Explore Literature</a>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <a href="#home" class="logo meitei-mayek">ꯋꯥꯔꯦꯡ ꯑꯃꯁꯨꯡ ꯁꯩꯔꯦꯡ</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#wareng" class="nav-link meitei-mayek">ꯋꯥꯔꯦꯡ (Prose)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#seireng" class="nav-link meitei-mayek">ꯁꯩꯔꯦꯡ (Poetry)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="home">
+            <div class="welcome-message">
+                <h1 class="section-title">Welcome</h1>
+                <p>Explore the rich world of Manipuri poetry (Seireng) and Literature(wareng) in Meetei Mayek script. Discover legendery writers, cultural expressions</p>
+            </div>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>ꯋꯥꯔꯦꯡ (Prose)</h3>
+                    <p>Discover traditional Manipuri prose literature from school textbooks and other sources.</p>
+                    <a href="#wareng" class="btn" style="display: inline-block; margin-top: 1rem; background-color: var(--primary-color); color: white; border: none;">Explore Prose</a>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>ꯁꯩꯔꯦꯡ (Poetry)</h3>
+                    <p>Experience the beauty of Manipuri poetry in its original Meetei Mayek script.</p>
+                    <a href="#seireng" class="btn" style="display: inline-block; margin-top: 1rem; background-color: var(--primary-color); color: white; border: none;">Explore Poetry</a>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>About Project</h3>
+                    <p>Learn about our mission to preserve and promote Manipuri literature for future generations.</p>
+                    <a href="#about" class="btn" style="display: inline-block; margin-top: 1rem; background-color: var(--primary-color); color: white; border: none;">About Us</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="wareng">
+            <h2 class="section-title meitei-mayek">ꯋꯥꯔꯦꯡ (Prose)</h2>
+            
+            <article id="wareng1" class="literature-card">
+                <h3 class="meitei-mayek">ꯋꯥꯔꯦꯡ</h3>
+                <div class="literature-content meitei-mayek">
+                    <p>ꯋꯥꯔꯇꯀꯤ ꯂꯦꯕꯥꯀꯁꯤꯖꯗ ꯂꯝ-ꯂꯝꯒꯤ ꯑꯑꯣꯏꯅ ꯁꯥꯌꯣꯀꯁ꯭ꯌ ꯍꯝꯅꯦ. ꯑꯦꯑꯦꯁꯣꯏꯅ ꯅꯨꯖꯇꯤꯒꯤ ꯎꯔꯤꯕ ꯁꯥ-ꯎꯆꯦꯀꯁꯤꯖ ꯅꯇꯇꯕ ꯀ꯭ꯌ ꯑꯝ ꯁꯥꯌꯣꯀꯁ꯭ꯌꯗ ꯎꯕ ꯐ꯭ꯌꯑꯥꯏ. ꯀ꯭ꯔꯤꯒꯨꯝꯕꯗ ꯑꯦꯑꯦꯁꯣꯏꯒꯤ ꯂꯦꯕꯥꯀ ꯑꯁꯤꯗ ꯐ꯭ꯌꯗꯕ ꯑꯇꯣꯄꯄ ꯗꯦꯁꯇꯒꯤ ꯄꯨꯔꯈꯄ ꯁꯥ-ꯎꯆꯦꯀ ꯀ꯭ꯌꯥꯁꯨ ꯁꯥꯌꯣꯀꯁ꯭ꯌꯗ ꯍꯝꯅꯦ.
+ꯃꯅꯤꯄꯨꯔꯒꯤ ꯀꯥꯖꯆꯨꯄ ꯔꯣꯗꯠ ꯏꯔꯣꯏꯁꯦꯝꯕꯗ ꯁꯥꯌꯣꯀꯁ꯭ꯌ ꯂꯦ. ꯁꯥꯌꯣꯀꯁ꯭ꯌ ꯑꯁꯤꯗ ꯎꯔꯣꯈ, ꯖꯥꯅꯨ ꯌꯦꯟꯅꯆꯤꯖꯕ ꯎꯆꯦꯀꯀꯤ ꯃꯁꯂ ꯀ꯭ꯌ ꯂꯦ. ꯁꯥꯌꯣꯀꯁ꯭ꯌ ꯑꯁꯤꯗ ꯁꯖꯤ ꯃꯁꯂ ꯁꯔ ꯂꯦ. ꯏꯀꯣꯏ-ꯀꯣꯏꯅ ꯁꯥꯖꯤꯜꯂꯕ ꯂꯝꯄꯥꯀ ꯑꯝꯗ ꯁꯖꯤꯁꯤꯖ ꯍꯝꯃꯤ.*  
+ꯃꯂꯦꯝꯗ ꯃꯐꯝ ꯑꯇꯦꯗ ꯐ꯭ꯌꯗꯆꯔꯕ ꯃꯅꯤꯄꯨꯔꯒꯤ ꯀꯦꯕꯨꯂ ꯂꯝꯖꯥꯎꯗꯗ꯭ꯌ ꯐ꯭ꯌꯕ ꯁꯖꯥꯏꯁꯨ ꯏꯔꯣꯏꯁꯦꯝꯕꯒꯤ ꯁꯥꯌꯣꯀꯁ꯭ꯌꯗ ꯂꯦ. ꯀꯦꯕꯨꯂ ꯂꯝꯖꯥꯎꯒꯤ ꯐꯤꯚꯝꯒ ꯍꯥꯏꯔꯒ ꯃꯥꯟꯅ ꯁꯦꯝꯂꯕ ꯃꯐꯝ ꯃꯆꯥ ꯃꯆꯥ ꯑꯝꯗꯁꯨ ꯁꯖꯥꯏ ꯂꯥꯕ ꯑꯃꯣꯝꯁꯤꯖ ꯂꯦ</p>
+                </div>
+            </article>
+            
+            <article id="wareng2" class="literature-card">
+                <h3 class="meitei-mayek">ꯂꯥꯢꯌꯦꯛꯄ ꯚꯆꯗꯔ</h3>
+                <div class="literature-content meitei-mayek">
+                    <p>ꯃꯍꯣꯁꯥꯒꯤ ꯑꯣꯢꯅ ꯂꯦꯖꯕ ꯄꯣꯠꯀꯤ ꯃꯁꯀ ꯃꯥꯎꯖ ꯃꯨꯟ ꯌꯦꯜꯂꯒ ꯃꯗꯨꯒꯤ ꯃꯇꯣ
+ꯇꯝꯗꯨꯟ ꯌꯦꯛ-ꯁꯣꯠꯄ ꯑꯁꯤ ꯂꯥꯢꯌꯦꯛꯄꯒꯤ ꯍꯕꯛꯅꯤ। ꯃꯤꯑꯣꯢꯕꯅ ꯌꯦꯛ ꯁꯣꯠꯄ
+ꯍꯥꯏꯕꯁꯤ ꯅꯤꯖꯤꯖꯕ ꯍꯣꯛꯠꯆꯔꯕ ꯃꯇꯝꯗꯒꯤ ꯑꯗꯨꯝ ꯇꯣꯟꯔꯀꯜꯕꯅꯤ।
+ꯀꯔꯝꯕ ꯃꯇꯝꯗꯒꯤ ꯂꯦꯕꯥꯛ ꯑꯁꯤꯗ ꯂꯥꯢꯌꯦꯛꯄ ꯍꯣꯁꯤꯕꯒꯦ ꯍꯥꯏꯔꯕꯗꯤ ꯆꯄ ꯆꯅ
+ꯄꯥꯎꯗꯝ ꯄꯤꯕ ꯂꯨꯒꯅꯤ। ꯍꯥꯏꯟꯗꯒꯤ ꯁꯤꯖꯤꯅꯅꯔꯀꯜꯤꯕ ꯐꯤꯖꯤꯖꯤꯒꯤ ꯍꯇꯜꯤꯕ ꯃꯥꯎꯖ
+ꯃꯇꯣ ꯁꯦꯝꯕꯗ ꯌꯦꯛ-ꯁꯣꯠꯄꯒꯤ ꯍꯕꯛ ꯑꯗꯨꯝ ꯌꯥꯎꯖꯔꯀꯜꯕꯅꯤ। ꯑꯗꯨꯕꯨ ꯂꯦꯕꯥꯛ ꯑꯁꯤꯗ
+ꯌꯦꯛ-ꯁꯣꯠꯄꯅ ꯁꯤꯅꯐꯝ ꯑꯣꯢꯕ ꯍꯥꯖꯒꯦ ꯁꯦꯖꯕ ꯂꯥꯢꯌꯦꯛꯄ ꯃꯤ ꯂꯦꯔꯀꯁꯤꯕꯗꯤ
+ꯀꯨꯏꯗꯆꯔꯤ। ꯁꯀ꯭ꯔꯤꯁ꯭ꯠꯒꯤ 19 ꯁꯨꯕ ꯁ꯭ꯇꯥꯕꯗꯤꯗ ꯚꯗꯔꯁꯤꯖꯍ ꯃꯅꯤꯄꯨꯔꯒꯤ ꯑꯐꯥꯎꯕ
+ꯂꯥꯢꯌꯦꯛꯄꯅꯤ। ꯃꯍꯥꯀꯟ ꯃꯁꯥꯒꯤ ꯄꯥꯅꯖꯕꯒꯂꯣꯏꯟ ꯃꯄꯨꯟꯁꯤ ꯆꯨꯄꯄ ꯂꯥꯢꯌꯦꯛꯄꯒꯤ
+ꯍꯕꯛ ꯇꯣꯁꯤ।
+ꯚꯆꯗꯔꯁꯤꯖꯍ ꯍꯤꯌꯝ ꯀꯣꯟꯖꯤꯟ ꯀꯣꯕ ꯃꯐꯝꯗ ꯁꯀ꯭ꯔꯤꯁ꯭ꯠꯑꯄꯗ 1861 ꯗ ꯄꯣꯛꯁꯤ।
+ꯑꯄꯣꯛꯄꯒꯤ ꯃꯤꯖꯟ ꯅꯤꯖꯍꯣꯖꯝ ꯁꯅꯥꯕ ꯁꯤꯖꯍ ꯀꯣꯢ। ꯚꯆꯗꯔꯁꯤꯖꯍꯅ ꯑꯖꯖ ꯑꯣꯢꯔꯤꯖꯦꯗ
+ꯃꯍꯥꯛꯀꯤ ꯏꯃꯨꯖ ꯃꯅꯨꯖꯒꯤ ꯃꯤ ꯏꯃꯦꯜꯒꯤ ꯁꯨꯔꯥꯏ ꯁꯣꯏꯕꯝ ꯂꯦꯀꯥꯏꯗ ꯍꯣꯖꯒꯠꯨꯟ ꯂꯦꯁꯤ।
+ꯀꯣꯟꯟꯍꯖꯗ ꯃꯍꯥꯛ ꯃꯍꯥꯔꯥꯖ ꯆꯅꯗꯕ꯭ꯔꯀꯤꯔꯇꯤꯒꯤ ꯀꯣꯅꯨꯖꯤ ꯂꯥꯏꯁꯕ ꯃꯨꯛꯁꯤꯗꯝ ꯑꯖꯖꯝꯆꯥꯒꯤ
+ꯁꯦꯕꯛ ꯑꯣꯏꯁꯤ।
+</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="seireng">
+            <h2 class="section-title meitei-mayek">ꯁꯩꯔꯦꯡ (Poetry)</h2>
+            
+            <article id="seireng1" class="literature-card">
+                <h3 class="meitei-mayek">ꯁꯥꯉꯥꯏ! ꯁꯥꯉꯥꯏ! ꯁꯥꯉꯥꯏ ꯑꯣ!
+                    ꯁꯥꯉꯥꯏ ꯀꯣꯕꯤ ꯆꯤꯔꯣꯖꯕꯤ!<br>
+                      ꯁꯥꯉꯥꯏ ꯀꯣꯕꯤ ꯐꯖꯕꯤ!<br>
+                      ꯃꯤꯟ ꯀꯣꯢꯍꯤ ꯍꯤꯟꯔꯦ;<br>
+                      ꯅꯥꯗꯤ ꯁꯤꯗ ꯂꯣꯇꯂꯝꯃꯤ;<br>
+                        ꯅꯥꯗꯤ ꯁꯤꯗ ꯂꯦꯔꯝꯃꯤ।<br>
+                        ꯐꯨꯝꯗꯤ ꯃꯔꯈ ꯑꯁꯤꯗ<br>
+                        ꯅꯥꯒꯤ ꯅꯌꯨꯝ ꯑꯣꯢꯗꯨꯟ<br>
+                          ꯂꯦꯕꯁꯤꯕꯨ ꯅꯨꯖꯖꯥꯏꯕꯣꯢ!<br>
+                          ꯂꯦꯌꯨ ꯂꯦꯌꯨ ꯁꯖꯥꯏ ꯑꯣ<br>
+                          ꯅꯨꯖꯖꯥꯏꯅꯕꯨ ꯂꯦꯔꯝꯃꯨ<br>
+                          ꯅꯣꯔ ꯍꯅꯣ ꯄꯨꯔꯈꯦ।</p></h3>
+                <div class="literature-content meitei-mayek">
+                    <p>
+
+                    </p>
+                </div>
+            </article>
+            
+            <article id="seireng2" class="literature-card">
+                <h3 class="meitei-mayek">ꯄꯨꯟ</h3>
+                <div class="literature-content meitei-mayek">
+                    <p>ꯍ ꯄꯨꯟ ꯀꯥꯅꯥꯟꯕꯤ!
+                    ꯂꯦꯕꯥꯛ ꯄꯨꯟꯗꯤ ꯀꯥꯅꯥꯟꯕꯤ!<br>
+                      ꯏꯁꯤꯖ ꯌꯥꯝ ꯁꯣꯔꯥꯖꯦ,<br>
+                      ꯅꯥꯒꯤ ꯏꯁꯤꯖ ꯑꯥꯏꯁꯕ<br>
+                      ꯁꯖꯤꯛꯇꯕꯨ ꯍꯀꯖꯦ!<br>
+                      ꯄꯨꯟꯗꯒꯤ ꯍꯝꯕ ꯏꯁꯤꯖꯗꯤ<br>
+                      ꯌꯥꯝ ꯏꯈꯤ ꯍꯥꯎꯏꯗꯣ!<br>
+                        ꯏꯁꯤꯖ ꯌꯥꯝ ꯁꯣꯔꯥꯖꯦ,<br>
+                        ꯄꯨꯟꯒꯤ ꯏꯁꯤꯖ ꯑꯥꯏꯁꯕ<br>
+                          ꯁꯖꯤꯛꯇꯕꯨ ꯍꯀꯖꯦ।</p>
+                </div>
+            </article>
+        </section>
+        
+        <section id="about">
+            <h2 class="section-title">About This Project</h2>
+            <div class="literature-card">
+                <p>This digital archive aims to preserve and promote Manipuri literature written in Meetei Mayek script. Our collection includes Wareng (prose) and Seireng (poetry) from various Manipuri textbooks used in schools across Manipur.</p>
+                <p>We are committed to:</p>
+                <ul style="margin: 1rem 0 1rem 2rem;">
+                    <li>Preserving traditional Manipuri literature</li>
+                    <li>Making educational materials more accessible</li>
+                    <li>Promoting the use of Meetei Mayek script</li>
+                    <li>Supporting language learning for younger generations</li>
+                </ul>
+                <p>This project is developed by scholars and technology enthusiasts passionate about Manipuri culture and language preservation.</p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="literature-card">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h3>Get in Touch</h3>
+                        <p>Have questions or suggestions? We'd love to hear from you!</p>
+                        <ul class="footer-links" style="margin-top: 1rem;">
+                            <li>Academic Affiliation:Manipur International University</li>
+                            <li>+91 1234567895</li>
+                            <li>info@manipuriliterature.org</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="meitei-mayek">ꯋꯥꯔꯦꯡ ꯃꯇꯨꯡꯗ ꯁꯩꯔꯦꯡ</h3>
+                    <p>Collecting and promoting Manipuri literature in Meetei Mayek script for future generations.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#wareng">Wareng (Prose)</a></li>
+                        <li><a href="#seireng">Seireng (Poetry)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>LEIVON ALVINA KOM
+                BC2069 BCA 4th sem.&copy; All rights reserved.
+                </p>
+                <p class="meitei-mayek">ꯃꯅꯤꯄꯨꯔꯤ ꯂꯣꯟꯒꯤ ꯋꯥꯔꯦꯡ ꯑꯃꯁꯨꯡ ꯁꯩꯔꯦꯡꯁꯤꯡꯒꯤ ꯑꯦꯏꯕ</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
